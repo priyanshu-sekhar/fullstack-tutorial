@@ -2,8 +2,8 @@ This is a ToDo app. The final app would look somthing like this -
 ![todo app](https://raw.githubusercontent.com/priyanshu-sekhar/fullstack-tutorial/master/public/todo.png)
 
 ## Setup React
-Follow [Setup React](https://reactjs.org/docs/create-a-new-react-app.html
-)
+1. Follow [https://reactjs.org/docs/create-a-new-react-app.html](https://reactjs.org/docs/create-a-new-react-app.html)
+2. Install an IDE, eg. [WebStorm](https://www.jetbrains.com/webstorm/)
 
 ### Components Involved
 1. Create Task

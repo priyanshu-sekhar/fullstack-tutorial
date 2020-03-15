@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Todo from "./form/Todo";
+import Todo from "./components/Todo";
 
 ReactDOM.render(<Todo />, document.getElementById('root'));
 
