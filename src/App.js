@@ -1,24 +1,34 @@
 import React from 'react';
 import './App.css';
+import Player from "./components/Player";
+import Playlists from "./components/Playlists";
+import {useSelector} from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-      <div className={"category-header"}>
-        Categories
-      </div>
+    const items = useSelector(({playlists}) => playlists.items);
+    const selectedItem = useSelector(({playlists}) => playlists.selectedItem);
 
-      <div className={"app-body"}>
-        <div className={"player"}>
-          Video Player
-        </div>
+    return (
+        <div className="App">
+            <div className={"category-header"}>
+                Categories
+            </div>
 
-        <div className={"playlist"}>
-          Playlist
+            <div className={"app-body"}>
+                <div className={"player"}>
+                    <Player
+                        iitem={selectedItem}
+                    />
+                </div>
+
+                <div className={"playlist"}>
+                    <Playlists
+                        items={items}
+                    />
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default App;

@@ -28,4 +28,5 @@
 .playlist {
   flex: 1;
   background-color: aqua;
+  margin-left: 10px;
 }
