@@ -15,17 +15,13 @@ function App() {
             </div>
 
             <div className={"app-body"}>
-                <div className={"player"}>
-                    <Player
-                        iitem={selectedItem}
-                    />
-                </div>
+                <Player
+                    iitem={selectedItem}
+                />
 
-                <div className={"playlist"}>
-                    <Playlists
-                        items={items}
-                    />
-                </div>
+                <Playlists
+                    items={items}
+                />
             </div>
         </div>
     );

@@ -1,0 +1,32 @@
+.playlist-item {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.playlist-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.playlist-image {
+    background-color: aliceblue;
+    width: 60%;
+    object-fit: contain;
+}
+
+.playlist-name {
+    margin-left: 10px;
+    text-align: left;
+    color: #030303;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.playlist-border {
+    margin-top: 20px;
+    height: 1px;
+    width: 100%;
+    background-color: #707B7C ;
+}

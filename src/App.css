@@ -2,7 +2,6 @@
   text-align: center;
   display: flex;
   justify-content: flex-start;
-  background-color: green;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -27,6 +26,5 @@
 
 .playlist {
   flex: 1;
-  background-color: aqua;
   margin-left: 10px;
 }
