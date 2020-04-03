@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Playlists from "./components/Playlists";
 import {useDispatch, useSelector} from "react-redux";
@@ -7,7 +7,10 @@ import {fetchCategories} from "./actions/CategoryActions";
 
 function App() {
     const items = useSelector(({playlists}) => playlists.items);
-    const selectedItem = useSelector(({playlists}) => playlists.selectedItem);
+    const [selectedItem, setSelectedItem] = useState({
+        // videoUrl: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+        videoUrl: "https://www.youtube.com/watch?v=77wafaFbZ6Y"
+    });
     const categories = useSelector(({categories}) => categories.items);
     const dispatch = useDispatch();
 
@@ -16,6 +19,7 @@ function App() {
         console.log(categories);
     }, []);
 
+    console.log('selected item', selectedItem);
     return (
         <div className="App">
             <li className={"category-header"}>
@@ -31,12 +35,13 @@ function App() {
             <div className={"app-body"}>
                 <div className={"player"}>
                     <Player>
-                        <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"/>
+                        <source src={selectedItem.videoUrl}/>
                     </Player>
                 </div>
 
                 <Playlists
                     items={items}
+                    onSelect={(item) => setSelectedItem(item)}
                 />
             </div>
         </div>

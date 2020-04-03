@@ -1,20 +1,20 @@
 import React from "react";
-import '../styles/PlayListItem.css'
+import '../../styles/PlayListItem.css'
 
-function PlaylistItem({item}) {
-    const {image, name} = item;
+function PlaylistItem({item, onSelect}) {
+    const {videoName, videoThumbnail} = item;
 
     return (
-        <div className={"playlist-item"}>
+        <div className={"playlist-item"} onClick={() => onSelect(item)}>
             <div className={"playlist-content"}>
                 <img
-                    src={image}
+                    src={videoThumbnail}
                     className={"playlist-image"}
-                    alt={name}
+                    alt={videoName}
                 />
 
                 <div className={"playlist-name"}>
-                    {name}
+                    {videoName}
                 </div>
             </div>
 
