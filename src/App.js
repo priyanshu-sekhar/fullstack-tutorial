@@ -2,14 +2,13 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Playlists from "./components/Playlists";
 import {useDispatch, useSelector} from "react-redux";
-import {Player} from 'video-react';
+import ReactPlayer from "react-player";
 import {fetchCategories} from "./actions/CategoryActions";
 
 function App() {
     const items = useSelector(({playlists}) => playlists.items);
     const [selectedItem, setSelectedItem] = useState({
-        // videoUrl: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        videoUrl: "https://www.youtube.com/watch?v=77wafaFbZ6Y"
+        videoUrl: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
     });
     const categories = useSelector(({categories}) => categories.items);
     const dispatch = useDispatch();
@@ -34,9 +33,12 @@ function App() {
 
             <div className={"app-body"}>
                 <div className={"player"}>
-                    <Player>
-                        <source src={selectedItem.videoUrl}/>
-                    </Player>
+                   <ReactPlayer url={selectedItem.videoUrl}
+                                playing={false}
+                                width='100%'
+                                height='100%'
+                                light={true}
+                   />
                 </div>
 
                 <Playlists
